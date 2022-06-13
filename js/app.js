@@ -11,7 +11,12 @@ function cargarEventListeners(){
   // Cuando agregar un curso presionando "Agregar al carrito"
   listaCursos.addEventListener('click', agregarCurso);
 
-  carrito.addEventListener('click', eliminarCurso)
+  carrito.addEventListener('click', eliminarCurso);
+  
+  vaciarCarritoBtn.addEventListener('click', () => {
+    articulosCarrito = []; // reseteamos el arreglo
+    limpiarHTML();
+  })
 }
 
 //Funciones
