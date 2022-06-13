@@ -39,14 +39,23 @@ function leerDatosCurso(curso){
   //Agregar elemento a la lista con spread operator
   articulosCarrito = [...articulosCarrito, infoCurso];
   console.log(articulosCarrito);
+  carritoHTML();
 }
 
 //Muestra el carrito de compras en el HTML
 
 function carritoHTML(){
 
-  articulosCarrito.forEach( () =>{
+  articulosCarrito.forEach( (curso) =>{
     const row = document.createElement('tr');
-    
+    row.innerHTML = `
+    <td>
+      ${curso.titulo}
+    </td>
+    `;
+
+    //Agrega el HTML del carrito en el tbody
+
+    contenedorCarrito.appendChild(row);
   })
 }
